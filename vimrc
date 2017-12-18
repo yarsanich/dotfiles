@@ -7,6 +7,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'Konfekt/FastFold'
 	Plug 'posva/vim-vue'
 	Plug 'scrooloose/nerdtree'
+	Plug 'tmhedberg/SimpylFold'
 call plug#end()
 
 " Filetypes:
