@@ -8,6 +8,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'posva/vim-vue'
 	Plug 'scrooloose/nerdtree'
 	Plug 'tmhedberg/SimpylFold'
+	Plug 'jacoborus/tender.vim'
 call plug#end()
 
 " Filetypes:
@@ -20,6 +21,10 @@ let g:deoplete#enable_at_startup = 1
 set number
 set cursorline
 set showmatch
+
+" Theme
+syntax enable
+colorscheme tender
 
 " NERD tree setup
 autocmd vimenter * NERDTree
