@@ -32,3 +32,10 @@ let g:NERDTreeWinSize = 60
 
 " 80 characters line
 set colorcolumn=80
+
+map <Leader>p :call InsertPDB()<CR>
+
+function! InsertPDB()
+  let trace = expand("import pdb; pdb.set_trace()")
+  execute "normal o".trace
+endfunction
