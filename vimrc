@@ -9,6 +9,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'scrooloose/nerdtree'
 	Plug 'tmhedberg/SimpylFold'
 	Plug 'jacoborus/tender.vim'
+	Plug 'junegunn/fzf'
 call plug#end()
 
 " Filetypes:
@@ -39,3 +40,6 @@ function! InsertPDB()
   let trace = expand("import pdb; pdb.set_trace()")
   execute "normal o".trace
 endfunction
+
+" fuzzy finder
+nnoremap <C-p> :FZF<cr>
