@@ -8,7 +8,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'scrooloose/nerdtree'
 	Plug 'tmhedberg/SimpylFold'
 	Plug 'jacoborus/tender.vim'
-	Plug 'junegunn/fzf'
+	Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 	Plug 'mxw/vim-jsx'
     Plug 'pangloss/vim-javascript'
     if has('nvim')
