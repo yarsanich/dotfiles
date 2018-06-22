@@ -1,6 +1,5 @@
 " Plugins:
 call plug#begin('~/.vim/plugged')
-	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 	Plug 'zchee/deoplete-jedi'
 	Plug 'w0rp/ale'
 	Plug 'pearofducks/ansible-vim'
@@ -10,10 +9,27 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tmhedberg/SimpylFold'
 	Plug 'jacoborus/tender.vim'
 	Plug 'junegunn/fzf'
+	Plug 'mxw/vim-jsx'
+    Plug 'pangloss/vim-javascript'
+    if has('nvim')
+       Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    else
+       Plug 'Shougo/deoplete.nvim'
+       Plug 'roxma/nvim-yarp'
+       Plug 'roxma/vim-hug-neovim-rpc'
+       endif
 call plug#end()
 
 " Filetypes:
-autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab " No spaces
+" Python
+"au BufRead *.py compiler nose
+au FileType python set omnifunc=pythoncomplete#Complete
+au FileType python setlocal expandtab shiftwidth=4 tabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
+au FileType python set foldmethod=indent foldlevel=99
+
+" Javascript
+autocmd filetype javascript set sw=2 ts=2 expandtab
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
